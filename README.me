@@ -1,0 +1,118 @@
+# CloudNest Sistema de Backup com FastAPI 
+
+## Sobre o sistema
+    
+Este sistema é uma API de backup de arquivos desenvolvida com FastAPI, permitindo que usuários façam upload, download, listagem e exclusão de arquivos de forma segura.
+
+O sistema conta com autenticação JWT, isolamento de dados por usuário, verificação de duplicidade de arquivos via hash SHA-256 e validação de tamanho máximo.
+
+---
+
+## Funcionalidades
+
+* Cadastro de usuários
+* Senhas hash
+* Login com autenticação JWT
+* Upload de arquivos
+* Download seguro de arquivos
+* Listagem de backups com paginação
+* Exclusão de arquivos
+* Organização por usuário (pastas separadas)
+* Prevenção de arquivos duplicados (hash)
+* Validação de tamanho
+
+---
+
+## Tecnologias utilizadas
+
+* Python
+* FastAPI
+* SQLAlchemy
+* MySQL
+* Uvicorn
+
+---
+
+## Como rodar o projeto
+
+```bash
+# Clonar o repositório
+git clone https://github.com/BrunoSlvCh/CloudNest-Sistema-de-Backup-Centralizado-com-FastAPI
+
+# Entrar na pasta
+cd CloudNest-Sistema-de-Backup-Centralizado-com-FastAPI
+
+# Criar ambiente virtual
+python -m venv venv
+
+# Ativar ambiente
+venv\Scripts\activate
+
+# Instalar dependências
+pip install -r requirements.txt
+
+# Banco de dados
+Crie um banco de dados MySQL e configure as credenciais no arquivo database.py.
+As tabelas serão criadas automaticamente ao iniciar a aplicação.
+
+# Rodar o servidor
+uvicorn main:app --reload
+```
+
+---
+
+## Endpoints principais
+
+| Método | Rota                | Descrição         |
+| ------ | ------------        | ----------------- |
+| POST   | /register           | Criar usuário     |
+| POST   | /login              | Login             |
+| POST   | /Upload File        | Upload de arquivo |
+| GET    | /backups            | Listar backups    |
+| GET    | /backup/{backup_id} | Download          |
+| DELETE | /delete/{backup_id} | Deletar backup    |
+
+---
+
+## Autenticação
+
+Utilize o botão **Authorize** no Swagger e informe o token:
+
+```
+SEU_TOKEN
+
+```
+
+---
+
+## Estrutura dos arquivos
+
+```
+uploads/{id_usuario}/arquivo
+
+```
+
+---
+
+## Diferenciais
+
+* Sistema multiusuário com isolamento de dados
+* Upload inteligente (evita duplicados)
+* Estrutura preparada para escalar
+* Código organizado e modular
+
+---
+
+## Melhorias futuras
+
+* Deploy em nuvem (AWS S3)
+* Sistema Distibuído
+* Versionamento de arquivos
+* Interface frontend
+* Logs e monitoramento
+
+---
+
+## Desenvolvedor:
+
+Bruno da Silva Chagas
