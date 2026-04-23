@@ -1,8 +1,7 @@
 from fastapi import FastAPI, HTTPException, Depends, UploadFile, File, Depends
 from schemas import UsuarioCreate, LoginRequest, BackupResponse
-from models import Backup
+from models import Backup, Usuario
 from database import SessionLocal
-from models import Usuario
 from security import hash_senha,verificar_senha
 from jose import jwt, JWTError
 from datetime import datetime, timedelta
