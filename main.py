@@ -1,16 +1,13 @@
-from fastapi import FastAPI, HTTPException, Depends
-from fastapi import UploadFile, File
-from schemas import BackupResponse
+from fastapi import FastAPI, HTTPException, Depends, UploadFile, File, Depends
+from schemas import UsuarioCreate, LoginRequest, BackupResponse
 from models import Backup
 from database import SessionLocal
 from models import Usuario
-from schemas import UsuarioCreate,LoginRequest
 from security import hash_senha,verificar_senha
 from jose import jwt, JWTError
 from datetime import datetime, timedelta
 from fastapi.security import HTTPBearer, HTTPAuthorizationCredentials
 from fastapi.responses import FileResponse
-from fastapi import Depends
 from sqlalchemy.orm import Session
 import os
 import hashlib
